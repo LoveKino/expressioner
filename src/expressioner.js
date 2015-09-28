@@ -50,6 +50,12 @@ var pushOp = (opName, opStack, valueStack, operationMap) => {
 		while (opStack.length) {
 			if (isMatchedStart(opStack[opStack.length - 1], opName, operationMap)) {
 				opStack.pop();
+				let execute = operationMap[opName].execute;
+				if (valueStack.length && execute) {
+					let v = valueStack.pop();
+					valueStack.push(execute(v));
+				}
+				//
 				return;
 			}
 			computeOperation(opStack, valueStack, operationMap);

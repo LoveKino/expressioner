@@ -149,6 +149,43 @@ describe("base ast", () => {
         assert.equal(com(" 3 + (2 * 10 - (5 + 6))").value, 12);
     });
 
+    it("blanket3: controll blanket value", () => {
+        let com = ast({
+            "+": {
+                priority: 10,
+                opNum: 2,
+                execute: (a, b) => {
+                    return Number(a) + Number(b);
+                }
+            },
+            "-": {
+                priority: 10,
+                opNum: 2,
+                execute: (a, b) => {
+                    return Number(a) - Number(b);
+                }
+            },
+            "*": {
+                priority: 20,
+                opNum: 2,
+                execute: (a, b) => {
+                    return Number(a) * Number(b);
+                }
+            },
+            "{": {
+                type: "start"
+            },
+            "}": {
+                type: "close",
+                match: "{",
+                execute: (v) => {
+                    return 2 * v;
+                }
+            }
+        });
+        assert.equal(com(" {3 + 2} * 10").value, 100);
+    });
+
     it("++", () => {
         let com = ast({
             "+": {
