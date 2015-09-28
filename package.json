@@ -1,0 +1,30 @@
+{
+  "name": "expressioner",
+  "version": "0.0.1",
+  "description": "Expression AST Parser ",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "*",
+    "babel": "*",
+    "chokidar": "*"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel/register test/**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LoveKino/expressioner.git"
+  },
+  "keywords": [
+    "expression",
+    "ast",
+    "parser"
+  ],
+  "author": "ddchen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LoveKino/expressioner/issues"
+  },
+  "homepage": "https://github.com/LoveKino/expressioner#readme"
+}
