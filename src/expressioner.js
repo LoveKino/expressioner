@@ -8,6 +8,18 @@
 
 import findOp from "./findOp";
 
+/**
+ * operationMap
+ * 		op symbol
+ * 		config
+ * 			needAfterSpace
+ * 			needBeforeSpace
+ * 			priority
+ * 			opNum
+ * 			execute
+ * 			type
+ * 			match
+ */
 var ast = (operationMap) => (str) => {
 	if (typeof str !== "string")
 		throw new TypeError("unexpected value to parse.");
