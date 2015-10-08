@@ -79,7 +79,7 @@ console.log( arithmetic(" 3 + (2 * 4)++").value );
 
   `"start" | "end" | undefined`
 
-  There are some types for operation symbol. For example, in math, `+` is different from `(` and `)`. Blanket in math stands for block type which includes a start symbol and end symbol. The type attribute is used to define block concept in expression. So type need start and end value.
+  There are some types for operation symbol. For example, in math, `+` is different from `(` and `)`. Blanket in math stands for block type which includes a start symbol and end symbol. The type attribute is used to define block concept in expression. So type needs start and end value.
 
 - match
 
